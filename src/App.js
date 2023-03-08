@@ -1,4 +1,5 @@
-import Card from "./Card";
+import CardList from "./CardList";
+import { robots } from "./robots";
 
 //css
 import "./App.css";
@@ -6,7 +7,8 @@ import "./App.css";
 function App() {
   return (
     <div>
-      <Card />
+      <h1>Robot Friends</h1>
+      <CardList robots={robots} />
     </div>
   );
 }
