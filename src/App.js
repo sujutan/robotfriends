@@ -1,6 +1,8 @@
 import CardList from "./CardList";
 import { robots } from "./robots";
 
+import "tachyons";
+
 //css
 import "./App.css";
 
