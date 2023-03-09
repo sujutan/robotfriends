@@ -1,17 +1,21 @@
 import React from "react";
 import Card from "./Card";
 
-export default function CardList({ robots }) {
+export default function CardList({ robots, searchField }) {
   return (
     <div>
-      {robots.map((robot) => (
-        <Card
-          key={robot.id}
-          username={robot.username}
-          name={robot.name}
-          email={robot.email}
-        />
-      ))}
+      {robots
+        .filter((robot) =>
+          robot.name.toLowerCase().includes(searchField.toLowerCase())
+        )
+        .map((filteredRobot) => (
+          <Card
+            key={filteredRobot.id}
+            username={filteredRobot.username}
+            name={filteredRobot.name}
+            email={filteredRobot.email}
+          />
+        ))}
     </div>
   );
 }

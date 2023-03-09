@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 import CardList from "./CardList";
+import SearchBox from "./SearchBox";
 import { robots } from "./robots";
 
 import "tachyons";
@@ -7,10 +10,16 @@ import "tachyons";
 import "./App.css";
 
 function App() {
+  const [searchField, setSearchField] = useState("");
+  const handleSearchChange = (searchValue) => {
+    setSearchField(searchValue);
+  };
+
   return (
-    <div>
+    <div className="tc">
       <h1>Robot Friends</h1>
-      <CardList robots={robots} />
+      <SearchBox handleSearchChange={handleSearchChange} />
+      <CardList robots={robots} searchField={searchField} />
     </div>
   );
 }
