@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="tc">
-      <h1>Robot Friends</h1>
+      <h1 className="f1">Robot Friends</h1>
       <SearchBox handleSearchChange={handleSearchChange} />
       <CardList robots={robots} searchField={searchField} />
     </div>
